@@ -12,5 +12,6 @@
   </head>
   <body>
   <a href="views/viewCus.jsp">View Customers</a>
+  <a href="viewCus">View Customers</a>
   </body>
 </html>

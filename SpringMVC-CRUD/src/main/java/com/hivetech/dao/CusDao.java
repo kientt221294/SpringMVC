@@ -16,22 +16,23 @@ public class CusDao {
     }
 
     public List<Customer> getListCustomer() {
-        return template.query("select * from Emp99", new RowMapper<Customer>() {
+        return template.query("select * from customers", new RowMapper<Customer>() {
             public Customer mapRow(ResultSet rs, int row) throws SQLException {
                 Customer cus = new Customer();
-                cus.setCustomerName(rs.getString(1));
-                cus.setContactLastName(rs.getString(2));
-                cus.setContactFirstName(rs.getString(3));
-                cus.setPhone(rs.getString(4));
-                cus.setAddressLine1(rs.getString(5));
-                cus.setAddressLine2(rs.getString(6));
-                cus.setCity(rs.getString(7));
-                cus.setState(rs.getString(8));
-                cus.setPostalCode(rs.getString(9));
-                cus.setCountry(rs.getString(10));
-                cus.setSalesRepEmployeeNumber(rs.getInt(11));
-                cus.setCreditLimit(rs.getDouble(12));
-                cus.setBirthday(rs.getDate(13).toLocalDate());
+                cus.setCustomerNumber(rs.getInt("customerNumber"));
+                cus.setCustomerName(rs.getString("customerName"));
+                cus.setContactLastName(rs.getString("contactLastName"));
+                cus.setContactFirstName(rs.getString("contactFirstName"));
+                cus.setPhone(rs.getString("phone"));
+                cus.setAddressLine1(rs.getString("addressLine1"));
+                cus.setAddressLine2(rs.getString("addressLine2"));
+                cus.setCity(rs.getString("city"));
+                cus.setState(rs.getString("state"));
+                cus.setPostalCode(rs.getString("postalCode"));
+                cus.setCountry(rs.getString("country"));
+                cus.setSalesRepEmployeeNumber(rs.getInt("salesRepEmployeeNumber"));
+                cus.setCreditLimit(rs.getDouble("creditLimit"));
+                cus.setBirthday(rs.getDate("birthday").toLocalDate());
                 return cus;
             }
         });
