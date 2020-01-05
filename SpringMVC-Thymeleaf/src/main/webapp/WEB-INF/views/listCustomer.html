@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<h2>List customers</h2>
+<a href="/learn/faq/add">Add customer</a>
+<table border="2" width="100%" cellpadding="2">
+    <tr>
+        <th>Customer Number</th>
+        <th>Full Name</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Phone</th>
+        <th>Address line 1</th>
+        <th>Address line 2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Postal Code</th>
+        <th>Country</th>
+        <th>SaleEmpNumber</th>
+        <th>Credit Limit</th>
+        <th>Birthday</th>
+    </tr>
+    <tr th:each="cus : ${customerlist}">
+        <td th:text="${cus.customerNumber}"></td>
+        <td th:text="${cus.customerName}"></td>
+        <td th:text="${cus.contactFirstName}"></td>
+        <td th:text="${cus.contactLastName}"></td>
+        <td th:text="${cus.phone}"></td>
+        <td th:text="${cus.addressLine1}"></td>
+        <td th:text="${cus.addressLine2}"></td>
+        <td th:text="${cus.city}"></td>
+        <td th:text="${cus.state}"></td>
+        <td th:text="${cus.postalCode}"></td>
+        <td th:text="${cus.country}"></td>
+        <td th:text="${cus.salesRepEmployeeNumber}"></td>
+        <td th:text="${cus.creditLimit}"></td>
+        <td th:text="${cus.birthday}"></td>
+    </tr>
+</table>
+</body>
+</html>
