@@ -1,10 +1,11 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="ISO-8859-1">
 </head>
 <body>
 <h2>List customers</h2>
-<a href="/learn/faq/add">Add customer</a>
+<a href="/customer/add">Add customer</a>
 <table border="2" width="100%" cellpadding="2">
     <tr>
         <th>Customer Number</th>
@@ -22,7 +23,7 @@
         <th>Credit Limit</th>
         <th>Birthday</th>
     </tr>
-    <tr th:each="cus : ${customerlist}">
+    <tr th:each="cus : ${customerList}">
         <td th:text="${cus.customerNumber}"></td>
         <td th:text="${cus.customerName}"></td>
         <td th:text="${cus.contactFirstName}"></td>

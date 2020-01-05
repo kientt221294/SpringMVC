@@ -1,31 +1,30 @@
-package com.hivetech.SpringMVC.config;
+package com.hivetech.SpringMvc.config;
 
-import com.hivetech.SpringMVC.service.CustomerService;
-import com.hivetech.SpringMVC.service.impl.CustomerServiceImpl;
+import com.hivetech.SpringMvc.service.CustomerService;
+import com.hivetech.SpringMvc.service.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import javax.sql.DataSource;
 
-
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.hivetech.SpringMVC")
+@ComponentScan("com.hivetech.SpringMvc")
 // Load to Environment.
 @PropertySources({ @PropertySource("classpath:jdbc.properties") })
-public class ApplicationContextConfig {
-    @Autowired
-    private ApplicationContext applicationContext;
-
+public class WebMvcConfig {
     @Autowired
     private Environment env;
+    @Autowired
+    private ApplicationContext applicationContext;
 
     /*
      * STEP 1 - Create SpringResourceTemplateResolver
@@ -61,11 +60,10 @@ public class ApplicationContextConfig {
         return viewResolver;
     }
 
-    @Bean(name = "dataSource")
+    @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-        // See: jdbc.properties
         dataSource.setDriverClassName(env.getProperty("jdbc.driver"));
         dataSource.setUrl(env.getProperty("jdbc.url"));
         dataSource.setUsername(env.getProperty("jdbc.username"));
@@ -77,7 +75,7 @@ public class ApplicationContextConfig {
     }
 
     @Bean
-    public CustomerService getlistCustomer() {
+    public CustomerService getCustomerService() {
         return new CustomerServiceImpl(getDataSource());
     }
 }

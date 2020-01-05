@@ -1,4 +1,4 @@
-package com.hivetech.SpringMVC.model;
+package com.hivetech.SpringMvc.model;
 
 import java.time.LocalDate;
 
@@ -18,7 +18,7 @@ public class Customer {
     private Integer salesRepEmployeeNumber;
     private Double creditLimit;
     private LocalDate birthday;
-    private String profilePhotoName;
+//    private String profilePhotoName;
 
     public Customer() {
     }
@@ -69,7 +69,7 @@ public class Customer {
         this.salesRepEmployeeNumber = salesRepEmployeeNumber;
         this.creditLimit = creditLimit;
         this.birthday = birthday;
-        this.profilePhotoName = profilePhotoName;
+//        this.profilePhotoName = profilePhotoName;
     }
 
     public LocalDate getBirthday() {
@@ -184,11 +184,11 @@ public class Customer {
         this.creditLimit = creditLimit;
     }
 
-    public String getProfilePhotoName() {
-        return profilePhotoName;
-    }
-
-    public void setProfilePhotoName(String profilePhotoName) {
-        this.profilePhotoName = profilePhotoName;
-    }
+//    public String getProfilePhotoName() {
+//        return profilePhotoName;
+//    }
+//
+//    public void setProfilePhotoName(String profilePhotoName) {
+//        this.profilePhotoName = profilePhotoName;
+//    }
 }

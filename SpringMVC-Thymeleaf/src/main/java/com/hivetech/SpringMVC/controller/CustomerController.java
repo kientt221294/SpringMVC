@@ -1,7 +1,7 @@
-package com.hivetech.SpringMVC.controller;
+package com.hivetech.SpringMvc.controller;
 
-import com.hivetech.SpringMVC.model.Customer;
-import com.hivetech.SpringMVC.service.CustomerService;
+import com.hivetech.SpringMvc.model.Customer;
+import com.hivetech.SpringMvc.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,17 +13,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
+    @Autowired
     private CustomerService customerService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getlist(Model model){
-        List<Customer> listCustomer= customerService.listCustomer();
+    public String getlist(Model model) {
+        List<Customer> listCustomer = customerService.listCustomer();
         model.addAttribute("customerList", listCustomer);
+        model.addAttribute("abc", "hello there!!!");
         return "listCustomer";
     }
-
-//    @RequestMapping(value = "/add", method = RequestMethod.POST)
-//    public String addCustomer(Model model){
-//        model.addAttribute("")
-//    }
 }

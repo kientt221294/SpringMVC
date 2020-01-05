@@ -1,7 +1,8 @@
-package com.hivetech.SpringMVC.service.impl;
+package com.hivetech.SpringMvc.service.impl;
 
-import com.hivetech.SpringMVC.model.Customer;
-import com.hivetech.SpringMVC.service.CustomerService;
+import com.hivetech.SpringMvc.model.Customer;
+import com.hivetech.SpringMvc.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class CustomerServiceImpl implements CustomerService {
+
     private static final Logger LOGGER = Logger.getLogger(CustomerServiceImpl.class.getName());
 
     private JdbcTemplate jdbcTemplate;
@@ -19,10 +21,13 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerServiceImpl(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
+//    public void setTemplate(JdbcTemplate template) {
+//        this.jdbcTemplate = jdbcTemplate;
+//    }
 
     @Override
     public List<Customer> listCustomer() {
-        String sql = "select * from customers";
+        String sql = "SELECT * FROM customers LIMIT 10";
         List<Customer> listCustomer = jdbcTemplate.query(sql, new RowMapper<Customer>() {
             @Override
             public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {

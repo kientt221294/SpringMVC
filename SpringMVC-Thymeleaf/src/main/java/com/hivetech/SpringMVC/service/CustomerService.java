@@ -1,6 +1,6 @@
-package com.hivetech.SpringMVC.service;
+package com.hivetech.SpringMvc.service;
 
-import com.hivetech.SpringMVC.model.Customer;
+import com.hivetech.SpringMvc.model.Customer;
 
 import java.util.List;
 
