@@ -7,20 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e9a4a7-b220-4868-b998-47da569bb54b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/config/ApplicationContextConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/config/WebMvcApplicationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/config/WebMvcApplicationInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/controller/CustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/model/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/service/CustomerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/java/com/hivetech/SpringMVC/service/impl/CustomerServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/resources/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC-Thymeleaf/src/main/webapp/WEB-INF/views/listCustomer.html" beforeDir="false" />
-    </list>
+    <list default="true" id="51e9a4a7-b220-4868-b998-47da569bb54b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

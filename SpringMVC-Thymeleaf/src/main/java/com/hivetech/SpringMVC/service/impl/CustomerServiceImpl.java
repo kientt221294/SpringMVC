@@ -61,17 +61,22 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public boolean add(Customer customer) {
-        return false;
+    public void add(Customer customer) {
+        String sql = "INSERT INTO customers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        jdbcTemplate.update(sql, customer.getCustomerNumber(), customer.getCustomerName(),
+                customer.getContactLastName(), customer.getContactFirstName(), customer.getPhone(),
+                customer.getAddressLine1(), customer.getAddressLine2(), customer.getCity(),
+                customer.getState(), customer.getPostalCode(), customer.getCountry(),
+                customer.getSalesRepEmployeeNumber(), customer.getCreditLimit(), customer.getBirthday());
     }
 
     @Override
-    public boolean update(Customer customer) {
-        return false;
+    public void update(Customer customer) {
+
     }
 
     @Override
-    public boolean delete(int id) {
-        return false;
+    public void delete(int id) {
+
     }
 }
