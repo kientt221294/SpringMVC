@@ -1,4 +1,6 @@
-package com.hivetech.SpringMvc.model;
+package com.hivetech.SpringMVC.model;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -17,6 +19,7 @@ public class Customer {
     private String country;
     private Integer salesRepEmployeeNumber;
     private Double creditLimit;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 //    private String profilePhotoName;
 

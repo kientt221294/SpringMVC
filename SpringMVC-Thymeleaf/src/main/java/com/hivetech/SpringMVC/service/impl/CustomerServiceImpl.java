@@ -1,9 +1,11 @@
-package com.hivetech.SpringMvc.service.impl;
+package com.hivetech.SpringMVC.service.impl;
 
-import com.hivetech.SpringMvc.model.Customer;
-import com.hivetech.SpringMvc.service.CustomerService;
+import com.hivetech.SpringMVC.model.Customer;
+import com.hivetech.SpringMVC.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
@@ -61,13 +63,31 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void add(Customer customer) {
+    public Integer getNextMaxId() {
+        String sql = "SELECT MAX(customerNumber) FROM customers;";
+        Integer nextMaxId = jdbcTemplate.query(sql, new ResultSetExtractor<Integer>() {
+            @Override
+            public Integer extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                resultSet.next();
+                return Integer.valueOf(resultSet.getInt(1));
+            }
+        });
+        return nextMaxId;
+    }
+
+    @Override
+    public boolean add(Customer customer) {
         String sql = "INSERT INTO customers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-        jdbcTemplate.update(sql, customer.getCustomerNumber(), customer.getCustomerName(),
+        int isUpdated =
+        jdbcTemplate.update(sql, getNextMaxId() +1, customer.getCustomerName(),
                 customer.getContactLastName(), customer.getContactFirstName(), customer.getPhone(),
                 customer.getAddressLine1(), customer.getAddressLine2(), customer.getCity(),
                 customer.getState(), customer.getPostalCode(), customer.getCountry(),
                 customer.getSalesRepEmployeeNumber(), customer.getCreditLimit(), customer.getBirthday());
+
+
+
+        return isUpdated >0;
     }
 
     @Override
@@ -79,4 +99,6 @@ public class CustomerServiceImpl implements CustomerService {
     public void delete(int id) {
 
     }
+
+
 }

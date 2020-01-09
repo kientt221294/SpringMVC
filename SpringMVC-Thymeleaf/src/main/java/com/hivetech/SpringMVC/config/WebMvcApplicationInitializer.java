@@ -1,4 +1,4 @@
-package com.hivetech.SpringMvc.config;
+package com.hivetech.SpringMVC.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

@@ -1,7 +1,7 @@
-package com.hivetech.SpringMvc.config;
+package com.hivetech.SpringMVC.config;
 
-import com.hivetech.SpringMvc.service.CustomerService;
-import com.hivetech.SpringMvc.service.impl.CustomerServiceImpl;
+import com.hivetech.SpringMVC.service.CustomerService;
+import com.hivetech.SpringMVC.service.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.hivetech.SpringMvc")
+@ComponentScan("com.hivetech.SpringMVC")
 // Load to Environment.
 @PropertySources({ @PropertySource("classpath:jdbc.properties") })
 public class WebMvcConfig {
