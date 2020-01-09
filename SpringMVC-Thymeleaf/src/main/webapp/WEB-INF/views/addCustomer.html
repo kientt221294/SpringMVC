@@ -7,10 +7,6 @@
 <form action="#" th:action="@{/customer/save}" th:object="${customer}" method="post">
     <table >
         <tr>
-            <td>Customer number</td>
-            <td><input type="number" th:field="*{customerNumber}"/></td>
-        </tr>
-        <tr>
             <td>Customer name</td>
             <td><input type="text" th:field="*{customerName}"/></td>
         </tr>
